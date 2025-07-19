@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عسل حاحا - أجود أنواع العسل الطبيعي</title>
+    <meta name="description" content="متجر عسل حاحا لأجود أنواع العسل الطبيعي والمفيد للصحة">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background: linear-gradient(180deg, #fefcf3, #f5f1e8);
+            color: #2d2419;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: #faf8f0;
+            border-bottom: 1px solid #e5dcc9;
+            box-shadow: 0 4px 20px -4px rgba(45, 36, 25, 0.1);
+            padding: 2rem 0;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f7c948, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.125rem;
+            color: #6b5d52;
+            margin-bottom: 1rem;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #e5dcc9;
+            color: #2d2419;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 3rem 0;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, #f7c948, #ff8c00);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 10px 30px -10px rgba(247, 201, 72, 0.3);
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: #6b5d52;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #faf8f0;
+            border: 1px solid #e5dcc9;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px -10px rgba(247, 201, 72, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #f5f1e8;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: #6b5d52;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f7c948, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .order-btn {
+            background: linear-gradient(135deg, #f7c948, #ff8c00);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            box-shadow: 0 10px 30px -10px rgba(247, 201, 72, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 3rem 0;
+            background: #faf8f0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            box-shadow: 0 4px 20px -4px rgba(45, 36, 25, 0.1);
+        }
+
+        .benefit-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #f7c948, #ff8c00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .benefit-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-description {
+            color: #6b5d52;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d2419;
+            color: #fefcf3;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: rgba(254, 252, 243, 0.8);
+            margin-bottom: 1rem;
+        }
+
+        .footer-copyright {
+            color: rgba(254, 252, 243, 0.6);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 28rem;
+            position: relative;
+            box-shadow: 0 4px 20px -4px rgba(45, 36, 25, 0.1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b5d52;
+        }
+
+        .modal-title {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5dcc9;
+            border-radius: 0.5rem;
+            font-family: inherit;
+            text-align: right;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 4rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #f7c948, #ff8c00);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            box-shadow: 0 10px 30px -10px rgba(247, 201, 72, 0.3);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: #25d366;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🍯 عسل حاحا</h1>
+                <p class="tagline">أجود أنواع العسل الطبيعي والمفيد للصحة</p>
+                <div class="badges">
+                    <span class="badge">⭐ جودة عالية</span>
+                    <span class="badge">🛡️ طبيعي 100%</span>
+                    <span class="badge">🚚 توصيل سريع</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-card">
+                <h2 class="hero-title">استمتع بطعم العسل الأصيل</h2>
+                <p class="hero-description">
+                    نحن نقدم لك أجود أنواع العسل الطبيعي المستخرج من أفضل المناحل المحلية، 
+                    بجودة عالية وطعم لا يقاوم
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">المنتجات المتوفرة</h2>
+                <p class="section-description">
+                    اختر من مجموعتنا المتنوعة من العسل الطبيعي عالي الجودة
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" onclick="openOrderForm('عسل الدغموس الطبيعي', '230 درهم')">
+                    <div class="product-image">🍯</div>
+                    <h3 class="product-name">عسل الدغموس الطبيعي</h3>
+                    <p class="product-description">
+                        عسل الدغموس هو أحد أندر وأقوى أنواع العسل الطبيعي في المغرب، يُستخرج من أزهار نبات الدغموس الشوكي المعروف بخصائصه العلاجية القوية. يتميز بلونه الداكن، وطعمه القوي واللاذع، وقوامه السميك، ويعتبر من أغنى أنواع العسل بالمعادن والفيتامينات.
+                    </p>
+                    <div class="product-footer">
+                        <span class="product-price">230 درهم</span>
+                        <button class="order-btn">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="openOrderForm('عسل الكاليبتوس', '150 درهم')">
+                    <div class="product-image">🍯</div>
+                    <h3 class="product-name">عسل الكاليبتوس </h3>
+                    <p class="product-description">
+                        عسل الكاليبتوس يُستخلص من رحيق أزهار شجر الكاليبتوس (الأوكالبتوس)، ويتميز بلونه الداكن، ورائحته القوية المميزة، وطعمه المعتدل المائل إلى الحدة قليلاً. يُعرف بخصائصه الطبية، خاصة في علاج أمراض الجهاز التنفسية
+                    </p>
+                    <div class="product-footer">
+                        <span class="product-price">150 درهم</span>
+                        <button class="order-btn">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="openOrderForm('عسل زهر البرتقال', '200 درهم')">
+                    <div class="product-image">🍯</div>
+                    <h3 class="product-name">عسل زهر البرتقال</h3>
+                    <p class="product-description">
+                     عسل البرتقال يُستخلص من رحيق أزهار شجر البرتقال (الليمون الحامض أو الحلو)، ويتميز بلونه الفاتح المائل إلى الذهبي، وطعمه اللطيف والعطري، ورائحته الزهرية المنعشة. يعتبر من أنواع العسل الخفيفة والمحبوبة لدى الكبار والصغار.
+                    </p>
+                    <div class="product-footer">
+                        <span class="product-price">200 درهم</span>
+                        <button class="order-btn">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">لماذا عسل حاحا؟</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3 class="benefit-title">طبيعي 100%</h3>
+                    <p class="benefit-description">
+                        عسل طبيعي خالص بدون إضافات أو مواد حافظة
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⭐</div>
+                    <h3 class="benefit-title">جودة عالية</h3>
+                    <p class="benefit-description">
+                        من أفضل المناحل المغربية مع ضمان الجودة
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚚</div>
+                    <h3 class="benefit-title">توصيل سريع</h3>
+                    <p class="benefit-description">
+                        توصيل سريع وآمن إلى باب منزلك
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3 class="footer-title">عسل حاحا</h3>
+            <p class="footer-description">
+                أجود أنواع العسل الطبيعي - اطلب الآن عبر واتساب
+            </p>
+            <p class="footer-copyright">
+                © 2024 عسل حاحا. جميع الحقوق محفوظة.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Order Form Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeOrderForm()">×</button>
+            <h3 class="modal-title" id="modalTitle">طلب المنتج</h3>
+            
+            <form id="orderForm">
+                <div class="form-group">
+                    <label class="form-label">الاسم الكامل *</label>
+                    <input type="text" class="form-input" id="customerName" placeholder="اسمك الكامل" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">رقم الهاتف *</label>
+                    <input type="tel" class="form-input" id="customerPhone" placeholder="رقم الهاتف" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">العنوان *</label>
+                    <textarea class="form-textarea" id="customerAddress" placeholder="العنوان الكامل للتوصيل" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">ملاحظات إضافية</label>
+                    <textarea class="form-textarea" id="customerNotes" placeholder="أي ملاحظات أو طلبات خاصة"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    💬 أرسل الطلب عبر واتساب
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <button class="whatsapp-btn" onclick="openWhatsApp()">💬</button>
+
+    <script>
+        let currentProduct = '';
+        let currentPrice = '';
+
+        function openOrderForm(productName, price) {
+            currentProduct = productName;
+            currentPrice = price;
+            document.getElementById('modalTitle').textContent = 'طلب ' + productName;
+            document.getElementById('orderModal').classList.add('active');
+        }
+
+        function closeOrderForm() {
+            document.getElementById('orderModal').classList.remove('active');
+            document.getElementById('orderForm').reset();
+        }
+
+        function openWhatsApp() {
+            const message = "مرحباً، أريد الاستفسار عن منتجات عسل حاحا";
+            const whatsappUrl = `https://wa.me/212719222910?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const address = document.getElementById('customerAddress').value;
+            const notes = document.getElementById('customerNotes').value;
+
+            if (!name || !phone || !address) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            const message = `
+مرحباً، أريد طلب:
+🍯 المنتج: ${currentProduct}
+💰 السعر: ${currentPrice}
+
+📝 بيانات العميل:
+الاسم: ${name}
+الهاتف: ${phone}
+العنوان: ${address}
+${notes ? `ملاحظات: ${notes}` : ''}
+            `.trim();
+
+            const whatsappUrl = `https://wa.me/212719222910?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+
+            closeOrderForm();
+            alert('سيتم توجيهك إلى واتساب لإكمال الطلب');
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('orderModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeOrderForm();
+            }
+        });
+    </script>
+</body>
+</html>
